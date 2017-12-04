@@ -43,10 +43,12 @@ render(){
   const{ data, errors, loading } = this.state;
   return(
     <Form onSubmit={this.onSubmit} loading={loading}>
-      {errors.global && <Message negative>
-        <Message.Header>Something went wrong</Message.Header>
-        <p>{errors.global}</p>
-      </Message>}
+      {errors.global && (
+        <Message negative>
+          <Message.Header>Something went wrong</Message.Header>
+          <p>{errors.global}</p>
+      </Message>
+    )}
       <Form.Field error={!!errors.email}>
         <label htmlFor="email">Email</label>
         <input type="email"
